@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MongoDB Query Result</title>
+  </head>
+  <body>
+    <h1>Result:</h1>
+    <div id="result"></div>
+    <script src="./server" type="module"></script>
+    <script>
+      fetch('http://localhost:3000/your-endpoint')
+    .then(response => response.json())
+    .then(result => {
+        // Use the result to create HTML elements that display the data
+        console.log(result);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+    </script>
+  </body>
+</html>
