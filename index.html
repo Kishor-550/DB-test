@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MongoDB Query Result</title>
-  </head>
-  <body>
-    <h1>Result:</h1>
-    <div id="result"></div>
-    <script src="./server" type="module"></script>
-    <script>
-      fetch('http://localhost:3000/your-endpoint')
-    .then(response => response.json())
-    .then(result => {
-        // Use the result to create HTML elements that display the data
-        console.log(result);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-    </script>
-  </body>
+	<head>
+		<title>MongoDB Query Result</title>
+	</head>
+	<body>
+		<h1>Result:</h1>
+		<div id="result"></div>
+		<script>
+			fetch("http://localhost:3000/Rooms")
+				.then((response) => response.json())
+				.then((result) => {
+					// Use the result to create HTML elements that display the data
+					console.log(result);
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+
+			const data = {
+				name: "Ajmal",
+				age: "43"
+			};
+
+			// fetch("http://localhost:3000/Rooms", {
+			// 	method: "POST",
+			// 	headers: {
+			// 		"Content-Type": "application/json",
+			// 	},
+			// 	body: JSON.stringify(data),
+			// })
+			// 	.then((response) => response.json())
+			// 	.then((result) => {
+			// 		// Use the result to create HTML elements that display the data
+			// 		console.log(result);
+			// 	})
+			// 	.catch((error) => {
+			// 		console.error(error);
+			// 	});
+		</script>
+	</body>
 </html>
+
+<!-- 
+   const data = {
+        name: "Ajmal",
+        age: "43",
+      };
+
+      fetch('http://localhost:3000/Rooms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(response => response.json())
+        .then(item => {
+          console.log(item);
+        })
+        .catch(error => console.error(error));
+    });
+
+ -->
